@@ -981,9 +981,10 @@ var generateFlowWithSettings = function(context, settings, initialArtboard, sour
 		primaryTextColor = MSImmutableColor.colorWithSVGString("#FFFFFF");
 		secondaryTextColor = MSImmutableColor.colorWithSVGString("#9B9B9B");
 	} else {
-		flowBackgroundColor = MSImmutableColor.colorWithSVGString("#FFFFFF").newMutableCounterpart();
-		primaryTextColor = MSImmutableColor.colorWithSVGString("#121212");
-		secondaryTextColor = MSImmutableColor.colorWithSVGString("#999999");
+		flowBackgroundColor = MSImmutableColor.colorWithSVGString("#E8EAEF").newMutableCounterpart();
+		primaryTextColor = MSImmutableColor.colorWithSVGString("#14151A");
+		secondaryTextColor = MSImmutableColor.colorWithSVGString("#42454D");
+		thirdTextColor = MSImmutableColor.colorWithSVGString("#81868F");
 	}
 
 	if(sketchVersion < sketchVersion48) {
@@ -1210,13 +1211,13 @@ var generateFlowWithSettings = function(context, settings, initialArtboard, sour
 	flowNameLabel.frame().setWidth(Math.min(groupBounds.size.width, 1200));
 	flowNameLabel.setTextBehaviour(1);
 	flowNameLabel.setStringValue(flowName);
-	flowNameLabel.addAttribute_value(NSFontAttributeName, NSFont.fontWithName_size("HelveticaNeue", 36*exportScale));
+	flowNameLabel.addAttribute_value(NSFontAttributeName, NSFont.fontWithName_size("SF Pro Display Bold", 28*exportScale));
 	flowNameLabel.setTextColor(primaryTextColor);
 	flowNameLabel.setLineHeight(36*1.3*exportScale);
 	flowNameLabel.adjustFrameToFit();
 	flowBoard.addLayers([flowNameLabel]);
 
-	var yPos = outerPadding + flowNameLabel.frame().height() + 18;
+	var yPos = outerPadding + flowNameLabel.frame().height() + 8;
 	var flowDescriptionLabel;
 	if (flowDescription && flowDescription != "") {
 		flowDescriptionLabel = MSTextLayer.new();
@@ -1249,7 +1250,7 @@ var generateFlowWithSettings = function(context, settings, initialArtboard, sour
 			modifiedOnText = strings["generateFlow-modifiedOnDate"].stringByReplacingOccurrencesOfString_withString("%date%", formatter.stringFromDate(NSDate.date()))
 		}
 
-		yPos += 12;
+		yPos += 16;
 
 		modifiedDateLabel.setName(strings["generateFlow-modifiedDate"]);
 		modifiedDateLabel.frame().setX(outerPadding);
@@ -1258,7 +1259,7 @@ var generateFlowWithSettings = function(context, settings, initialArtboard, sour
 		modifiedDateLabel.setTextBehaviour(1);
 		modifiedDateLabel.setStringValue(modifiedOnText);
 		modifiedDateLabel.addAttribute_value(NSFontAttributeName, NSFont.fontWithName_size("HelveticaNeue", 12*exportScale));
-		modifiedDateLabel.setTextColor(secondaryTextColor);
+		modifiedDateLabel.setTextColor(thirdTextColor);
 		modifiedDateLabel.adjustFrameToFit();
 		flowBoard.addLayers([modifiedDateLabel]);
 
