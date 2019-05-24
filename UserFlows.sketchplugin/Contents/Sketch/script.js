@@ -1537,7 +1537,7 @@ var redrawConnections = function(context) {
 	var sharedLayerStyles = sharedLayerStylesForContext(context);
 	var connectionLayers = MSLayerArray.arrayWithLayers(drawConnections(connections, doc.currentPage(), 1, nil, sharedLayerStyles));
 	connectionsGroup = sketchVersion < sketchVersion52 ? MSLayerGroup.groupFromLayers(connectionLayers) : MSLayerGroup.groupWithLayers(connectionLayers);
-	connectionsGroup.setName("-Connections");
+	connectionsGroup.setName("Connections");
 	connectionsGroup.setIsLocked(1);
 	connectionsGroup.deselectLayerAndParent();
 	context.command.setValue_forKey_onLayer_forPluginIdentifier(true, "isConnectionsContainer", connectionsGroup, kPluginDomain);
