@@ -580,7 +580,7 @@ var editConditionsForArtboard = function(currentArtboard, context, forceNewCondi
 		var numConditions = conditionChecks.length,
 			conditionSpacing = 16,
 			listY = conditionSpacing,
-			flowIndicatorColor = NSUserDefaults.standardUserDefaults().objectForKey(kFlowIndicatorColorKey) || "#F5A623",
+			flowIndicatorColor = "#E95164",
 			conditionFontSize = NSUserDefaults.standardUserDefaults().objectForKey(kConditionFontSizeKey) || 16,
 			conditionBorderColor = MSImmutableColor.colorWithSVGString(flowIndicatorColor).newMutableCounterpart(),
 			conditionBoardWidth = conditionBoard.frame().width(),
@@ -1552,7 +1552,7 @@ var redrawConnections = function(context) {
 
 var drawConnections = function(connections, parent, exportScale, labelColor, sharedBorderStyles) {
 	var connectionsCount = connections.length,
-		flowIndicatorColor = NSUserDefaults.standardUserDefaults().objectForKey(kFlowIndicatorColorKey) || "#F5A623",
+		flowIndicatorColor = NSUserDefaults.standardUserDefaults().objectForKey(kFlowIndicatorColorKey) || "#14151A",
 		flowIndicatorAlpha = NSUserDefaults.standardUserDefaults().objectForKey(kFlowIndicatorAlphaKey) || 1,
 		minimumTapArea = NSUserDefaults.standardUserDefaults().objectForKey(kMinTapAreaKey) || 44,
 		showLinkRects = NSUserDefaults.standardUserDefaults().objectForKey(kShowsLinkRectsKey) || 1,
